@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 120 5% 3%;
+    --foreground: 120 60% 75%;
+
+    --card: 120 5% 6%;
+    --card-foreground: 120 60% 75%;
+
+    --popover: 120 5% 6%;
+    --popover-foreground: 120 60% 75%;
+
+    --primary: 120 100% 40%;
+    --primary-foreground: 120 5% 3%;
+
+    --secondary: 120 10% 12%;
+    --secondary-foreground: 120 60% 75%;
+
+    --muted: 120 5% 10%;
+    --muted-foreground: 120 20% 45%;
+
+    --accent: 120 100% 40%;
+    --accent-foreground: 120 5% 3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 20% 15%;
+    --input: 120 20% 15%;
+    --ring: 120 100% 40%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 120 5% 5%;
+    --sidebar-foreground: 120 60% 75%;
+    --sidebar-primary: 120 100% 40%;
+    --sidebar-primary-foreground: 120 5% 3%;
+    --sidebar-accent: 120 10% 12%;
+    --sidebar-accent-foreground: 120 60% 75%;
+    --sidebar-border: 120 20% 15%;
+    --sidebar-ring: 120 100% 40%;
+
+    --terminal-green: 120 100% 40%;
+    --terminal-green-dim: 120 60% 25%;
+    --terminal-green-glow: 120 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--terminal-green) / 0.6), 0 0 20px hsl(var(--terminal-green) / 0.3);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 5px hsl(var(--terminal-green) / 0.3), inset 0 0 5px hsl(var(--terminal-green) / 0.1);
+  }
+
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--terminal-green) / 0.03) 2px,
+      hsl(var(--terminal-green) / 0.03) 4px
+    );
+  }
+}
